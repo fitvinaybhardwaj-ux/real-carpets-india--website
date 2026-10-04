@@ -117,16 +117,29 @@ export function initMap() {
       <div class="corridor-card" data-code="${m.code}">
         <div class="corridor-header">
           <h4 class="corridor-country">${m.name}</h4>
-          <span class="badge ${m.code === 'AU' ? 'badge-terracotta' : 'badge-dark'}">${m.badge}</span>
+          <span class="corridor-badge ${m.code === 'AU' ? 'corridor-badge-highlight' : ''}">${m.badge}</span>
         </div>
         <div class="corridor-milestone">${m.milestone}</div>
-        <div class="corridor-ports">
-          <strong>Entry Ports:</strong> ${m.ports.join(', ')}
+        <div class="corridor-details">
+          <div class="corridor-info-row">
+            <span class="corridor-label">Entry Ports</span>
+            <span class="corridor-val">${m.ports.join(', ')}</span>
+          </div>
+          <div class="corridor-info-row">
+            <span class="corridor-label">Core Demand</span>
+            <span class="corridor-val">${m.focus}</span>
+          </div>
         </div>
-        <p style="font-size: 0.785rem; color: var(--text-muted); margin-bottom: 0.75rem;">
-          <strong>Core Demand:</strong> ${m.focus}
-        </p>
-        <div class="corridor-leadtime">Ocean Transit: ${m.leadTimeFCL}</div>
+        <div class="corridor-leadtime">
+          <span class="leadtime-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            Ocean Transit
+          </span>
+          <span class="leadtime-val">${m.leadTimeFCL}</span>
+        </div>
       </div>
     `).join('');
 
