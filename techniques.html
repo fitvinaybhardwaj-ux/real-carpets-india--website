@@ -931,57 +931,87 @@
 
   <!-- Quote Request Modal -->
   <div class="modal-backdrop" id="quote-request-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="quote-modal-box">
-      <div class="modal-header">
-        <div>
-          <span class="eyebrow" style="margin-bottom: 0.25rem;">Direct Export Enquiry</span>
-          <h3 class="modal-title">Request B2B Quotation</h3>
+    <div class="product-detail-modal-box quote-modal-box" style="max-width: 820px; background-color: #FFFFFF;">
+      <button class="modal-close-btn" id="close-quote-modal" aria-label="Close quote modal">&times;</button>
+      <div style="padding: clamp(1.75rem, 4vw, 3rem); background-color: #FFFFFF;">
+        <div style="margin-bottom: 1.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.25rem;">
+          <span class="eyebrow">Direct Factory Quotation</span>
+          <h2 style="font-size: 1.85rem; color: var(--text-primary); margin-bottom: 0.35rem;">Request a Formal B2B Quotation</h2>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">
+            Submit your container volume requirements or specific article inquiry. Our commercial desk will calculate FOB/CIF pricing.
+          </p>
         </div>
-        <button class="modal-close-btn" id="close-quote-modal" aria-label="Close quotation modal">&times;</button>
-      </div>
 
-      <div class="modal-body">
-        <form id="quote-request-form" novalidate>
+        <form id="quote-request-form">
+          <input type="hidden" name="productCode" id="quote-product-code" value="">
           <div class="form-grid-2">
             <div class="form-group">
-              <label class="form-label">Full Name *</label>
-              <input type="text" name="name" class="form-input" placeholder="e.g. Johnathan Miller" required>
+              <label class="form-label">Full Name <span class="req">*</span></label>
+              <input type="text" name="fullName" class="form-input" placeholder="e.g. Richard Davenport" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Company / Brand Name *</label>
-              <input type="text" name="company" class="form-input" placeholder="e.g. Nordic Rugs AS" required>
-            </div>
-          </div>
-
-          <div class="form-grid-2">
-            <div class="form-group">
-              <label class="form-label">Work Email *</label>
-              <input type="email" name="email" class="form-input" placeholder="buyer@company.com" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Contact Phone / WhatsApp</label>
-              <input type="tel" name="phone" class="form-input" placeholder="+44 20 7946 0912">
+              <label class="form-label">Company Name <span class="req">*</span></label>
+              <input type="text" name="company" class="form-input" placeholder="e.g. Davenport Interiors Ltd" required>
             </div>
           </div>
 
           <div class="form-grid-3">
             <div class="form-group">
-              <label class="form-label">Product Categories</label>
-              <input type="text" name="productInterest" class="form-input" placeholder="e.g. Hand-Tufted, Kilims">
+              <label class="form-label">Job Title / Role</label>
+              <input type="text" name="jobTitle" class="form-input" placeholder="e.g. Senior Buyer / Sourcing Manager">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Business Email <span class="req">*</span></label>
+              <input type="email" name="email" class="form-input" placeholder="e.g. richard@davenport.co.uk" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="phone" class="form-input" placeholder="e.g. +44 20 7946 0912">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label class="form-label">Country <span class="req">*</span></label>
+              <input type="text" name="country" class="form-input" placeholder="e.g. United Kingdom" required>
             </div>
             <div class="form-group">
               <label class="form-label">Target Market</label>
-              <input type="text" name="targetMarket" class="form-input" placeholder="e.g. Retail / Hospitality">
+              <input type="text" name="targetMarket" class="form-input" placeholder="e.g. Retail Showroom / Hospitality">
             </div>
             <div class="form-group">
               <label class="form-label">Destination Port</label>
-              <input type="text" name="deliveryCountry" class="form-input" placeholder="e.g. Felixstowe / Hamburg">
+              <input type="text" name="deliveryCountry" class="form-input" placeholder="e.g. Felixstowe / Southampton">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label class="form-label">Product Category</label>
+              <select name="category" class="form-select">
+                <option value="Rugs & Carpets">Rugs &amp; Carpets</option>
+                <option value="Bathmats">Bathrugs &amp; Bathmats</option>
+                <option value="Made-Ups & Throws">Throws &amp; Cushions</option>
+                <option value="Accents & Furniture">Poufs &amp; Storage Baskets</option>
+                <option value="Kids">Kids Collection</option>
+                <option value="Fiesta Decor">Fiesta Decor</option>
+                <option value="Custom Project">Custom Development Project</option>
+                <option value="Full Container Assortment">Mixed Container Assortment</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Construction / Material</label>
+              <input type="text" name="construction" class="form-input" placeholder="e.g. Hand-Tufted Wool / Kilim">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Estimated Volume / Quantity</label>
+              <input type="text" name="quantity" class="form-input" placeholder="e.g. 1 x 40ft HQ Container or 500 pcs">
             </div>
           </div>
 
           <div class="form-group">
             <label class="form-label">Project Requirements &amp; Notes</label>
-            <textarea name="message" id="quote-requirement" class="form-textarea" placeholder="Specify required dimensions, volume, target FOB price, packaging needs..."></textarea>
+            <textarea name="message" id="quote-requirement" class="form-textarea" placeholder="Specify required dimensions, backing specifications, target FOB price, packaging needs..."></textarea>
           </div>
 
           <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
