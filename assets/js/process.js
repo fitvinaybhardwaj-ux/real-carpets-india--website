@@ -7,12 +7,12 @@ export function initProcess() {
   const viewerContainer = document.getElementById('process-step-viewer');
   const craftsContainer = document.getElementById('crafts-grid');
 
-  // 1. Render Process Tabs
+  // 1. Render Process Tabs (Filter / Step Form)
   if (tabsContainer) {
     tabsContainer.innerHTML = MANUFACTURING_PROCESS.map(s => `
-      <button class="step-tab ${s.step === 1 ? 'active' : ''}" data-step="${s.step}">
+      <button class="step-tab ${s.step === 1 ? 'active' : ''}" data-step="${s.step}" type="button" aria-label="Stage ${s.step}: ${s.title}">
         <span class="step-num">${s.step}</span>
-        <span>${s.title}</span>
+        <span class="step-title-text">${s.title}</span>
       </button>
     `).join('');
 
@@ -24,30 +24,41 @@ export function initProcess() {
     });
   }
 
-  // 2. Render Step Viewer
+  // 2. Render Step Viewer (Explanation Underneath)
   function renderStep(stepNum) {
     if (!viewerContainer) return;
     const step = MANUFACTURING_PROCESS.find(s => s.step === stepNum) || MANUFACTURING_PROCESS[0];
 
     viewerContainer.innerHTML = `
-      <div class="step-viewer-visual">
-        <img src="assets/images/pages/page_28_process_17_steps.jpg" alt="Real Carpets India - 17 Stage Manufacturing Process Overview" class="step-viewer-img">
+      <div class="step-explanation-header">
+        <div class="step-meta">
+          <span class="step-badge">Stage ${step.step} of 17 &bull; ${step.category}</span>
+          <div class="step-progress-track" aria-hidden="true">
+            <div class="step-progress-fill" style="width: ${(step.step / 17) * 100}%;"></div>
+          </div>
+        </div>
+        <div class="step-nav-buttons">
+          <button class="btn btn-outline btn-sm" id="btn-prev-step" ${step.step === 1 ? 'disabled style="opacity: 0.4; cursor: not-allowed;"' : ''}>
+            &larr; Previous Stage
+          </button>
+          <button class="btn btn-primary btn-sm" id="btn-next-step" ${step.step === 17 ? 'disabled style="opacity: 0.4; cursor: not-allowed;"' : ''}>
+            Next Stage &rarr;
+          </button>
+        </div>
       </div>
-      <div class="step-viewer-content">
-        <span class="step-badge">Stage ${step.step} of 17 &bull; ${step.category}</span>
+
+      <div class="step-explanation-body">
         <h3 class="step-title">${step.title}</h3>
         <p class="step-desc">${step.desc}</p>
         <div class="step-detail-box">
-          <strong>Process Quality Control:</strong>
-          <p style="margin-top: 0.35rem;">${step.detail}</p>
-        </div>
-        <div style="display: flex; gap: 0.75rem; margin-top: 2rem;">
-          <button class="btn btn-outline btn-sm" id="btn-prev-step" ${step.step === 1 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
-            &larr; Previous Stage
-          </button>
-          <button class="btn btn-primary btn-sm" id="btn-next-step" ${step.step === 17 ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
-            Next Stage &rarr;
-          </button>
+          <div class="step-detail-header">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <strong>Process Quality Control:</strong>
+          </div>
+          <p class="step-detail-text">${step.detail}</p>
         </div>
       </div>
     `;
@@ -69,9 +80,6 @@ export function initProcess() {
       tabsContainer.querySelectorAll('.step-tab').forEach(t => {
         const isMatch = parseInt(t.dataset.step, 10) === stepNum;
         t.classList.toggle('active', isMatch);
-        if (isMatch) {
-          t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
       });
     }
     renderStep(stepNum);

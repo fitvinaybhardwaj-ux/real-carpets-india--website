@@ -197,12 +197,32 @@
       </div>
 
       <!-- 17-Stage Process Timeline Component -->
-      <div class="process-component-wrapper reveal-on-scroll">
-        <div class="process-tabs-rail" id="process-step-tabs">
-          <!-- Rendered dynamically by process.js -->
+      <div class="process-interactive-wrapper reveal-on-scroll">
+        <!-- Top Row: Filters / Step Form (Left) + Fixed Smaller Image (Right) -->
+        <div class="process-top-grid">
+          <div class="process-filter-panel">
+            <div class="process-filter-header">
+              <span class="process-filter-eyebrow">17 Manufacturing Stages</span>
+              <span class="process-filter-hint">Select any stage to inspect technical controls</span>
+            </div>
+            <div class="process-filter-grid" id="process-step-tabs">
+              <!-- Rendered dynamically by process.js -->
+            </div>
+          </div>
+
+          <div class="process-image-aside">
+            <div class="process-image-frame">
+              <img src="assets/images/pages/page_28_process_17_steps.jpg" alt="Real Carpets India - 17 Stage Manufacturing Process Overview" class="process-aside-img">
+              <div class="process-image-caption">
+                <span>Integrated Panipat Process Map</span>
+                <span class="process-image-subcaption">17 Quality-Controlled Stages</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="process-viewer-stage" id="process-step-viewer">
+        <!-- Bottom Row: Detailed Explanation under picture and filters -->
+        <div class="process-explanation-card" id="process-step-viewer">
           <!-- Rendered dynamically by process.js -->
         </div>
       </div>
