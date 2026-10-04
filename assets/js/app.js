@@ -189,30 +189,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Render Certifications Grid & Lightbox Modal
+  // 7. Render Certifications Continuous Marquee & Lightbox Modal
   const certsContainer = document.getElementById('certs-grid');
   const certModal = document.getElementById('cert-lightbox-modal');
   const closeCertBtn = document.getElementById('close-cert-modal');
 
   if (certsContainer) {
-    certsContainer.innerHTML = CERTIFICATIONS.map(c => `
-      <div class="cert-card" data-id="${c.id}">
+    const createCardHtml = (c) => `
+      <div class="cert-card" data-id="${c.id}" role="button" tabindex="0" aria-label="Inspect ${c.name} certification document">
         <div>
-          <img src="${c.image}" alt="${c.name} Document" class="cert-card-img-preview">
-          <span class="cert-card-authority">${c.authority}</span>
-          <h4 class="cert-card-name">${c.name}</h4>
-          <span class="badge badge-terracotta" style="margin-bottom: 0.75rem;">${c.scope}</span>
-          <p class="cert-card-desc">${c.desc}</p>
+          <div class="cert-card-img-wrap">
+            <img src="${c.image}" alt="${c.name} Document" class="cert-card-img-preview" loading="lazy">
+          </div>
+          <span class="cert-card-authority" title="${c.authority}">${c.authority}</span>
+          <h4 class="cert-card-name" title="${c.name}">${c.name}</h4>
+          <span class="badge badge-terracotta cert-card-badge" title="${c.scope}">${c.scope}</span>
+          <p class="cert-card-desc" title="${c.desc}">${c.desc}</p>
         </div>
         <div class="cert-card-action">
           <span>Inspect Document</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </div>
       </div>
-    `).join('');
+    `;
+
+    const singleGroupHtml = CERTIFICATIONS.map(createCardHtml).join('');
+
+    certsContainer.className = 'certs-marquee-container reveal-on-scroll delay-1';
+    certsContainer.innerHTML = `
+      <div class="certs-marquee-track">
+        <div class="certs-marquee-group">${singleGroupHtml}</div>
+        <div class="certs-marquee-group" aria-hidden="true">${singleGroupHtml}</div>
+      </div>
+    `;
 
     certsContainer.querySelectorAll('.cert-card').forEach(card => {
-      card.addEventListener('click', () => {
+      const openModal = () => {
         const id = card.dataset.id;
         const cert = CERTIFICATIONS.find(x => x.id === id);
         if (cert && certModal) {
@@ -221,9 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
           const descEl = certModal.querySelector('#cert-modal-desc');
           if (imgEl) imgEl.src = cert.image;
           if (titleEl) titleEl.textContent = cert.name;
-          if (descEl) descEl.textContent = `${cert.authority} - ${cert.desc}`;
+          if (descEl) descEl.textContent = `${cert.authority} — ${cert.desc}`;
           certModal.classList.add('open');
           document.body.style.overflow = 'hidden';
+        }
+      };
+
+      card.addEventListener('click', openModal);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal();
         }
       });
     });
