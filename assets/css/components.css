@@ -628,9 +628,9 @@
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
-  padding-top: calc(var(--header-height) + 2.5rem);
-  padding-bottom: clamp(3.5rem, 6vh, 5.5rem);
+  min-height: calc(88vh - var(--header-height));
+  padding-top: calc(var(--header-height) + 1.5rem);
+  padding-bottom: clamp(1.75rem, 3.5vh, 2.75rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -671,7 +671,7 @@
   font-size: clamp(1.05rem, 1.3vw, 1.25rem);
   color: var(--text-secondary);
   line-height: 1.65;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-cta-group {
@@ -679,7 +679,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero-badges-strip {
@@ -785,7 +785,7 @@
 .story-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(2.5rem, 5vw, 6rem);
+  gap: clamp(2rem, 3.5vw, 4rem);
   align-items: center;
 }
 
@@ -803,51 +803,55 @@
 
 .story-milestone-card {
   position: absolute;
-  bottom: -2rem;
-  right: -2rem;
+  bottom: -1rem;
+  right: -1rem;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
-  padding: 1.75rem;
+  padding: 1.5rem;
   border-radius: var(--radius-sm);
-  max-width: 320px;
+  max-width: 300px;
   box-shadow: var(--shadow-hover);
 }
 
 .milestone-year {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: 2rem;
   color: var(--accent-terracotta);
   line-height: 1;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .milestone-title {
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--text-primary);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .milestone-desc {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .story-narrative p {
-  font-size: 1.05rem;
+  font-size: 1.025rem;
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.story-narrative p:last-child {
+  margin-bottom: 0;
 }
 
 .story-narrative p.lead-text {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   color: var(--text-primary);
-  line-height: 1.5;
+  line-height: 1.45;
   margin-bottom: 1.75rem;
 }
 
@@ -946,7 +950,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 1.25rem 1.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -1283,10 +1287,10 @@
    07. 17-Stage Manufacturing Process Timeline & Filter View
    ========================================================================== */
 .process-interactive-wrapper {
-  margin-top: 2.5rem;
+  margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 /* Top Row: Filters (Left) + Big Process Chart (Right) */
@@ -1704,14 +1708,14 @@
    08. Custom Rug Programme & Configurator
    ========================================================================== */
 .custom-programme-wrapper {
-  margin-top: 3.5rem;
+  margin-top: 1.25rem;
 }
 
 .custom-steps-horizontal {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.25rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 
 .custom-step-item {
@@ -2512,16 +2516,16 @@
 .site-footer {
   background-color: var(--bg-dark);
   color: var(--text-inverse);
-  padding-top: clamp(4rem, 7vw, 7rem);
-  padding-bottom: 2.5rem;
+  padding-top: clamp(2.5rem, 4.5vw, 3.75rem);
+  padding-bottom: 2rem;
   border-top: 1px solid var(--border-dark);
 }
 
 .footer-top-grid {
   display: grid;
   grid-template-columns: 1.5fr repeat(3, 1fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
-  margin-bottom: 4.5rem;
+  gap: clamp(1.75rem, 3.5vw, 3rem);
+  margin-bottom: 2.5rem;
 }
 
 .footer-brand h3 {
@@ -2672,8 +2676,8 @@
    ========================================================================== */
 .subpage-hero {
   position: relative;
-  padding-top: calc(var(--header-height) + 2.5rem);
-  padding-bottom: 3.5rem;
+  padding-top: calc(var(--header-height) + 1.5rem);
+  padding-bottom: 2.25rem;
   background: linear-gradient(180deg, #FAF8F5 0%, #F4EFE6 100%);
   border-bottom: 1px solid var(--border-color);
 }
