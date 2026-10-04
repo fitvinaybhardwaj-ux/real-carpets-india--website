@@ -71,7 +71,11 @@ export function initSampleDrawer(showToast) {
         browseBtn.addEventListener('click', () => {
           closeDrawer();
           const catSec = document.getElementById('catalogue');
-          if (catSec) catSec.scrollIntoView({ behavior: 'smooth' });
+          if (catSec) {
+            catSec.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            window.location.href = 'products.html';
+          }
         });
       }
       return;

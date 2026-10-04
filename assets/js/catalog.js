@@ -6,6 +6,7 @@ let searchQuery = '';
 
 export function initCatalog(onAddToSample, onOpenQuote) {
   const container = document.getElementById('products-grid');
+  if (!container) return;
   const countEl = document.getElementById('filter-results-count');
   const categoryPills = document.querySelectorAll('.filter-pill');
   const searchInput = document.getElementById('search-input');

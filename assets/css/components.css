@@ -1827,3 +1827,99 @@
     max-width: 100%;
   }
 }
+
+/* ==========================================================================
+   14. Subpage Editorial Hero Banners & Breadcrumbs
+   ========================================================================== */
+.subpage-hero {
+  position: relative;
+  padding-top: calc(var(--header-height) + 2.5rem);
+  padding-bottom: 3.5rem;
+  background: linear-gradient(180deg, #FAF8F5 0%, #F4EFE6 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.subpage-hero-inner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.subpage-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.subpage-breadcrumb a {
+  color: var(--accent-terracotta);
+  text-decoration: none;
+}
+
+.subpage-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.subpage-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.subpage-title em {
+  font-style: italic;
+  font-family: var(--font-editorial);
+  color: var(--accent-terracotta);
+  font-weight: 400;
+}
+
+.subpage-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  max-width: 650px;
+}
+
+.subpage-hero-visual {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
+  max-height: 320px;
+}
+
+.subpage-hero-visual img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.subpage-hero-visual:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .subpage-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .subpage-hero-visual {
+    max-height: 250px;
+  }
+  .subpage-hero-visual img {
+    height: 250px;
+  }
+}
+
