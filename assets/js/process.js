@@ -102,4 +102,39 @@ export function initProcess() {
       </div>
     `).join('');
   }
+
+  // 4. Process Flowchart Lightbox Handlers
+  const chartModal = document.getElementById('process-chart-modal');
+  const openZoomBtn = document.getElementById('btn-zoom-process');
+  const chartFrame = document.getElementById('process-chart-zoom-target');
+  const closeChartBtn = document.getElementById('close-process-modal');
+
+  function openChartModal() {
+    if (chartModal) {
+      chartModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeChartModal() {
+    if (chartModal) {
+      chartModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (openZoomBtn) openZoomBtn.addEventListener('click', openChartModal);
+  if (chartFrame) chartFrame.addEventListener('click', openChartModal);
+  if (closeChartBtn) closeChartBtn.addEventListener('click', closeChartModal);
+  if (chartModal) {
+    chartModal.addEventListener('click', (e) => {
+      if (e.target === chartModal) closeChartModal();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chartModal && chartModal.classList.contains('open')) {
+      closeChartModal();
+    }
+  });
 }
+

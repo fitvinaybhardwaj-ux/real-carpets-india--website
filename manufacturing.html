@@ -211,12 +211,23 @@
           </div>
 
           <div class="process-image-aside">
-            <div class="process-image-frame">
+            <div class="process-image-frame" id="process-chart-zoom-target" title="Click to inspect full resolution 17-stage process flowchart">
               <img src="assets/images/pages/page_28_process_17_steps.jpg" alt="Real Carpets India - 17 Stage Manufacturing Process Overview" class="process-aside-img">
-              <div class="process-image-caption">
-                <span>Integrated Panipat Process Map</span>
+            </div>
+            <div class="process-image-footer">
+              <div class="process-image-meta">
+                <span class="process-image-tag">Facility Process Map</span>
                 <span class="process-image-subcaption">17 Quality-Controlled Stages</span>
               </div>
+              <button type="button" class="process-zoom-btn" id="btn-zoom-process" aria-label="Open full resolution process map">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                <span>Full View</span>
+              </button>
             </div>
           </div>
         </div>
@@ -541,6 +552,22 @@
         <div>
           <button class="btn btn-primary" id="success-dismiss-btn" style="min-width: 180px;">Done</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Flowchart Full-Resolution Lightbox Modal -->
+  <div class="modal-backdrop" id="process-chart-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="product-detail-modal-box" style="max-width: 1240px; padding: 0; background: #FAF8F5; overflow: hidden; width: 95%;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.15rem 1.75rem; border-bottom: 1px solid var(--border-color); background: #FFFFFF;">
+        <div>
+          <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-terracotta); font-weight: 700; display: block; margin-bottom: 0.2rem;">Manufacturing Flowchart</span>
+          <h3 style="font-size: 1.25rem; color: var(--text-primary); margin: 0; font-family: var(--font-serif);">17 Integrated Panipat Production Stages</h3>
+        </div>
+        <button class="modal-close-btn" id="close-process-modal" aria-label="Close process map" style="position: static; transform: none; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">&times;</button>
+      </div>
+      <div style="padding: 1.25rem; background: #FAF8F5; display: flex; justify-content: center; align-items: center; overflow: auto; max-height: 80vh;">
+        <img src="assets/images/pages/page_28_process_17_steps.jpg" alt="Real Carpets India - 17 Stage Manufacturing Process Overview (Full Resolution)" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius-xs); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
       </div>
     </div>
   </div>
