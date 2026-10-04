@@ -147,6 +147,22 @@ export function initCatalog(onAddToSample, onOpenQuote) {
     });
   }
 
+  // Check URL params for category on load
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramCategory = urlParams.get('category');
+    if (paramCategory) {
+      const matchingPill = Array.from(categoryPills).find(
+        p => p.dataset.category?.toLowerCase() === paramCategory.toLowerCase()
+      );
+      if (matchingPill) {
+        categoryPills.forEach(p => p.classList.remove('active'));
+        matchingPill.classList.add('active');
+        currentCategory = matchingPill.dataset.category;
+      }
+    }
+  } catch (e) {}
+
   // Initial render
   render();
 }

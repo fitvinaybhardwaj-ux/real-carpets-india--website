@@ -22,12 +22,12 @@
        ========================================================================== -->
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Brand Logo (New Provided Logo) -->
       <a href="index.html" class="brand-logo" aria-label="Real Carpets India Home">
-        <span class="brand-name">REAL CARPETS INDIA</span>
-        <span class="brand-tagline">Rugs &amp; Carpets Manufacturing House &bull; Est. 1995</span>
+        <img src="assets/images/brand-logo.png" alt="Real Carpets India" class="brand-logo-img">
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation (Condensed into Dynamic Sidebar) -->
       <nav class="nav-desktop" aria-label="Main Navigation">
         <a href="index.html" class="nav-link">Home</a>
         <a href="index.html#about" class="nav-link">About</a>
@@ -41,6 +41,17 @@
 
       <!-- Action Group -->
       <div class="header-actions">
+        <!-- Dynamic Categories Menu Trigger (3 Dynamic Lines - Before Samples) -->
+        <button class="categories-menu-trigger" id="categories-menu-trigger" aria-label="Explore Categories &amp; Navigation" aria-expanded="false" aria-controls="categories-sidebar">
+          <div class="dynamic-lines" aria-hidden="true">
+            <span class="d-line line-top"></span>
+            <span class="d-line line-mid"></span>
+            <span class="d-line line-bot"></span>
+          </div>
+          <span class="categories-trigger-label">Categories</span>
+        </button>
+
+        <!-- Sample Box Drawer Trigger -->
         <button class="sample-drawer-trigger" id="header-sample-trigger" aria-label="Open Sample Swatch Box">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -51,45 +62,208 @@
           <span class="sample-count-badge" style="display: none;">0</span>
         </button>
 
+        <!-- Primary Quote CTA -->
         <button class="btn btn-primary btn-sm" data-action="open-quote">
           Request a Quote
-        </button>
-
-        <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
-          <span></span>
-          <span></span>
-          <span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
-  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
-    <div>
-      <div class="mobile-nav-header">
-        <span class="brand-name" style="font-size: 1.15rem;">REAL CARPETS INDIA</span>
-        <button id="close-mobile-nav" style="font-size: 1.75rem; line-height: 1;" aria-label="Close Mobile Menu">&times;</button>
-      </div>
-      <ul class="mobile-nav-links">
-        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-        <li><a href="index.html#about" class="mobile-nav-link">About Company</a></li>
-        <li><a href="products.html" class="mobile-nav-link">Products &amp; Catalogue</a></li>
-        <li><a href="collections.html" class="mobile-nav-link active">Story Collections</a></li>
-        <li><a href="manufacturing.html" class="mobile-nav-link">Manufacturing &amp; Craft</a></li>
-        <li><a href="custom-programme.html" class="mobile-nav-link">Custom Rug Programme</a></li>
-        <li><a href="quality.html" class="mobile-nav-link">Quality &amp; Certifications</a></li>
-        <li><a href="contact.html" class="mobile-nav-link">Global Reach &amp; Contact</a></li>
-      </ul>
+  <!-- Categories Dynamic Sidebar & Overlay -->
+  <div class="categories-sidebar-overlay" id="categories-sidebar-overlay"></div>
+  <aside class="categories-sidebar" id="categories-sidebar" aria-label="Product Categories &amp; Navigation">
+    <div class="categories-sidebar-header">
+      <a href="index.html" aria-label="Real Carpets India Home">
+        <img src="assets/images/brand-logo.png" alt="Real Carpets India" class="categories-sidebar-logo">
+      </a>
+      <button class="close-categories-btn" id="close-categories-sidebar" aria-label="Close Categories Menu">&times;</button>
     </div>
-    <div style="padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.75rem;">
+
+    <div class="categories-sidebar-body">
+      <!-- Section: Product Categories -->
+      <div class="categories-section">
+        <div class="categories-section-head">
+          <span class="categories-section-title">Product Categories</span>
+          <span class="categories-section-badge">Export Catalogue</span>
+        </div>
+        <ul class="categories-list">
+          <li>
+            <a href="products.html?category=Rugs" class="category-card-item" data-category="Rugs">
+              <div class="cat-item-left">
+                <div class="cat-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cat-item-title">Rugs &amp; Carpets</div>
+                  <div class="cat-item-subtitle">Hand-Tufted &bull; Woven &bull; Knitted &bull; Braided</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="cat-item-badge">12+ Designs</span>
+                <span class="cat-arrow">&rarr;</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="products.html?category=Bathmats" class="category-card-item" data-category="Bathmats">
+              <div class="cat-item-left">
+                <div class="cat-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M2 12h20M2 6h20M2 18h20"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cat-item-title">Bathmats</div>
+                  <div class="cat-item-subtitle">100% Cotton Ribbed &bull; Microfiber &bull; Anti-Skid</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="cat-item-badge">6+ Designs</span>
+                <span class="cat-arrow">&rarr;</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="products.html?category=Made-Ups" class="category-card-item" data-category="Made-Ups">
+              <div class="cat-item-left">
+                <div class="cat-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <rect x="4" y="4" width="16" height="16" rx="3"/>
+                    <path d="M9 9l6 6M15 9l-6 6"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cat-item-title">Home Made-Ups</div>
+                  <div class="cat-item-subtitle">Cushions &bull; Throws &bull; Bedside Runners</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="cat-item-badge">6+ Designs</span>
+                <span class="cat-arrow">&rarr;</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="products.html?category=Poufs" class="category-card-item" data-category="Poufs">
+              <div class="cat-item-left">
+                <div class="cat-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M12 3v18M3 12h18"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cat-item-title">Poufs &amp; Ottomans</div>
+                  <div class="cat-item-subtitle">Braided Jute &bull; Knitted Wool &bull; Dense Foam</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="cat-item-badge">5+ Designs</span>
+                <span class="cat-arrow">&rarr;</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="products.html?category=Baskets" class="category-card-item" data-category="Baskets">
+              <div class="cat-item-left">
+                <div class="cat-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 10l2 11h12l2-11H4zM9 10V6a3 3 0 0 1 6 0v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cat-item-title">Storage Baskets</div>
+                  <div class="cat-item-subtitle">Natural Jute &bull; Braided Cotton Rope &bull; Planters</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="cat-item-badge">5+ Designs</span>
+                <span class="cat-arrow">&rarr;</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section: Collections -->
+      <div class="categories-section">
+        <div class="categories-section-head">
+          <span class="categories-section-title">Curated Collections</span>
+          <a href="collections.html" style="font-size: 0.75rem; color: var(--accent-terracotta); font-weight: 600; text-decoration: none;">View All &rarr;</a>
+        </div>
+        <div class="collections-pill-grid">
+          <a href="collections.html#raw-luxe" class="collection-pill-btn">Raw Luxe</a>
+          <a href="collections.html#minimal-modern" class="collection-pill-btn">Minimal Modern</a>
+          <a href="collections.html#heritage-revival" class="collection-pill-btn">Heritage Revival</a>
+          <a href="collections.html#coastal-boho" class="collection-pill-btn">Coastal Boho</a>
+          <a href="collections.html" class="collection-pill-btn">Monochrome Linear</a>
+        </div>
+      </div>
+
+      <!-- Section: Company & Capabilities -->
+      <div class="categories-section">
+        <div class="categories-section-head">
+          <span class="categories-section-title">Company &amp; Facilities</span>
+        </div>
+        <ul class="sidebar-nav-links">
+          <li>
+            <a href="index.html" class="sidebar-nav-link">
+              <span>Home &amp; Overview</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#about" class="sidebar-nav-link">
+              <span>About Real Carpets India (Est. 1995)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="sidebar-nav-link">
+              <span>Full Export Catalogue</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="manufacturing.html" class="sidebar-nav-link">
+              <span>Panipat Manufacturing Facilities</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="custom-programme.html" class="sidebar-nav-link">
+              <span>Custom Rug &amp; Hospitality Programme</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="quality.html" class="sidebar-nav-link">
+              <span>Quality, Testing &amp; Certifications</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="sidebar-nav-link">
+              <span>Global Reach &amp; Factory Contact</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="categories-sidebar-footer">
       <button class="btn btn-primary" data-action="open-quote" style="width: 100%;">
-        Request a Quote
+        Request a Quotation
       </button>
-      <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center;">
-        Plot No. 891, Sector-08, HUDA, Panipat 132103, Haryana
-      </p>
+      <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; line-height: 1.4;">
+        Plot No. 891, Sector-08, HUDA, Panipat 132103, Haryana, India
+      </div>
     </div>
   </aside>
 
@@ -233,7 +407,9 @@
     <div class="container">
       <div class="footer-top-grid">
         <div class="footer-brand">
-          <h3>REAL CARPETS INDIA</h3>
+          <a href="index.html" class="brand-logo footer-logo" aria-label="Real Carpets India Home">
+            <img src="assets/images/brand-logo-white.png" alt="Real Carpets India" class="brand-logo-img footer-logo-img">
+          </a>
           <p>
             Rugs &amp; carpets manufacturing house established in 1995. Supplying international retailers, brands, and hospitality projects worldwide with premium floor-covering solutions.
           </p>
