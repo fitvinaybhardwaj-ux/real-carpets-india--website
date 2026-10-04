@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weaving &amp; Craftsmanship Techniques | Real Carpets India</title>
+  <meta name="description" content="Explore Real Carpets India's 9 core craftsmanship weaving techniques: Hand-Tufted, Hand-Woven Pit-Loom, Hand-Knotted, Panja Kilim, Hand-Knitted, Braided, Hand-Hooked, Machine-Tufted, and Precision Printed.">
+  <meta name="keywords" content="carpet weaving techniques, hand-tufted rugs Panipat, hand-woven kilims, hand-knotted carpets India, braided jute rugs, panja kilim manufacturer, custom rug constructions">
+  
+  <link rel="icon" type="image/png" href="assets/images/brand-logo.png">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <style>
+    /* Dedicated Techniques Page Styles */
+    .techniques-filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tech-filter-btn {
+      padding: 0.55rem 1.15rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .tech-filter-btn:hover {
+      border-color: var(--text-primary);
+      color: var(--text-primary);
+    }
+    .tech-filter-btn.active {
+      background: var(--text-primary);
+      border-color: var(--text-primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .techniques-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+    .tech-detail-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+    }
+    .tech-detail-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-terracotta);
+      box-shadow: var(--shadow-hover);
+    }
+    .tech-card-image-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-subtle);
+    }
+    .tech-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .tech-detail-card:hover .tech-card-img {
+      transform: scale(1.05);
+    }
+    .tech-card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(26, 25, 24, 0.85);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-xs);
+    }
+    .tech-card-content {
+      padding: 1.65rem 1.5rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .tech-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin-bottom: 0.65rem;
+    }
+    .tech-card-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .tech-specs-box {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-xs);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-left: 2px solid var(--accent-terracotta);
+    }
+    .tech-spec-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+    .tech-spec-label {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .tech-spec-val {
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: right;
+    }
+    .tech-card-actions {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    /* Matrix Table */
+    .techniques-matrix-table-wrap {
+      overflow-x: auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-top: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+      min-width: 800px;
+    }
+    .tech-table th {
+      background: var(--bg-subtle);
+      padding: 1rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tech-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+    .tech-table tr:hover td {
+      background: #FDFBF7;
+    }
+    @media (max-width: 640px) {
+      .techniques-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Site Header
+       ========================================================================== -->
+  <header class="site-header" id="main-header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Real Carpets India Home">
+        <img src="assets/images/brand-logo.png" alt="Real Carpets India - Manufacturer &amp; Exporter" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="techniques.html" class="nav-link active">Techniques</a>
+        <a href="custom-programme.html" class="nav-link">Custom Rugs</a>
+        <a href="quality.html" class="nav-link">Quality</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <!-- Action Group -->
+      <div class="header-actions">
+        <!-- Dynamic Categories Menu Trigger (3 Dynamic Lines) -->
+        <button class="categories-menu-trigger" id="categories-menu-trigger" aria-label="Explore Categories &amp; Navigation" aria-expanded="false" aria-controls="categories-sidebar">
+          <div class="dynamic-lines" aria-hidden="true">
+            <span class="d-line line-top"></span>
+            <span class="d-line line-mid"></span>
+            <span class="d-line line-bot"></span>
+          </div>
+        </button>
+
+        <!-- Sample Box Drawer Trigger -->
+        <button class="sample-drawer-trigger" id="header-sample-trigger" aria-label="Open Sample Swatch Box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+          <span>Samples</span>
+          <span class="sample-count-badge" id="sample-count-badge" aria-label="0 items in swatch box">0</span>
+        </button>
+
+        <!-- Primary B2B Action Button -->
+        <button class="btn btn-terracotta" data-action="open-quote">
+          Request Quote
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories Dynamic Sidebar & Overlay -->
+  <div class="categories-sidebar-overlay" id="categories-sidebar-overlay"></div>
+  <aside class="categories-sidebar" id="categories-sidebar" aria-label="Product Categories &amp; Navigation">
+    <div class="categories-sidebar-header">
+      <div class="categories-sidebar-brand">
+        <img src="assets/images/brand-logo.png" alt="Real Carpets India" class="categories-sidebar-logo">
+      </div>
+      <button class="close-categories-btn" id="close-categories-sidebar" aria-label="Close Categories Menu">&times;</button>
+    </div>
+
+    <div class="categories-sidebar-body">
+      <div class="categories-section">
+        <div class="categories-section-head">
+          <span class="categories-section-title">Company &amp; Facility</span>
+        </div>
+        <ul class="categories-list">
+          <li>
+            <a href="index.html" class="sidebar-nav-link">
+              <span>Home</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="sidebar-nav-link">
+              <span>About</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="sidebar-nav-link">
+              <span>Products</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="techniques.html" class="sidebar-nav-link active">
+              <span>Techniques</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="custom-programme.html" class="sidebar-nav-link">
+              <span>Custom Rug Programme</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="quality.html" class="sidebar-nav-link">
+              <span>Quality</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="sidebar-nav-link">
+              <span>Contact Us</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="categories-sidebar-footer">
+      <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; line-height: 1.4; letter-spacing: 0.08em; text-transform: uppercase;">
+        A GOVT. RECOGNIZED EXPORT HOUSE
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Subpage Editorial Hero Banner
+       ========================================================================== -->
+  <section class="subpage-hero">
+    <div class="container subpage-hero-inner">
+      <div class="reveal-on-scroll">
+        <nav class="subpage-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Weaving &amp; Craftsmanship Techniques</span>
+        </nav>
+        <span class="eyebrow">Artisanal Mastery • Panipat Industrial Setup</span>
+        <h1 class="subpage-title">
+          Manufacturing <em>Techniques</em>
+        </h1>
+        <p class="subpage-desc">
+          Every rug, made-up, and architectural floor covering manufactured at Real Carpets India is defined by specialized structural engineering. From generational hand-knotted heirlooms and high-density tufted wool to flatwoven pit-loom kilims and chunky hand-knits, explore our complete manufacturing repertoire.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="#techniques-grid" class="btn btn-terracotta">
+            Explore 9 Techniques &darr;
+          </a>
+          <button class="btn btn-outline" data-action="open-quote">
+            Request Technique Swatch Kit
+          </button>
+        </div>
+      </div>
+
+      <div class="subpage-hero-visual reveal-on-scroll delay-1">
+        <img src="assets/images/pages/page_16_hand_tufted.jpg" alt="Master Artisan Craftsmanship at Real Carpets India">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9 Core Techniques Showcase Grid
+       ========================================================================== -->
+  <section class="section" id="techniques-grid">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;" class="reveal-on-scroll">
+        <div>
+          <span class="eyebrow">Panipat Industrial Repertoire</span>
+          <h2 class="section-title">9 Structural Constructions</h2>
+          <p class="section-desc">
+            Direct ownership of pit-looms, tufting tables, and finishing yards allows us to engineer floor coverings tailored to your exact target FOB prices, yarn blends, and pile heights.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="techniques-filter-bar reveal-on-scroll" id="tech-filters">
+        <button class="tech-filter-btn active" data-filter="all">All Techniques (9)</button>
+        <button class="tech-filter-btn" data-filter="pile">Hand-Crafted Pile (3)</button>
+        <button class="tech-filter-btn" data-filter="flatweave">Flatweaves &amp; Kilims (2)</button>
+        <button class="tech-filter-btn" data-filter="textile">Knitted &amp; Braided (2)</button>
+        <button class="tech-filter-btn" data-filter="precision">Precision &amp; Volume (2)</button>
+      </div>
+
+      <!-- Techniques Cards Grid -->
+      <div class="techniques-showcase-grid reveal-on-scroll" id="techniques-list">
+
+        <!-- 1. Hand-Tufted -->
+        <div class="tech-detail-card" data-category="pile">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_hand_tufted.jpg" alt="Hand-Tufted Craftsmanship - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Cut &amp; Loop Pile</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Hand-Tufted</h3>
+            <p class="tech-card-desc">
+              Artisan-guided tufting guns shoot yarn through a stretched cotton primary backing. Allows for intricate multi-colour organic curves, deep sculpted high-low reliefs, and luxurious plush pile heights.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Pile Height</span>
+                <span class="tech-spec-val">10 mm to 25 mm</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">New Zealand Wool, Viscose, Bikaner Blend</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Backing Compound</span>
+                <span class="tech-spec-val">100% Cotton Canvas + Natural Latex</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Living Room Area Rugs, Hospitality Suites</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Matching Rugs &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Hand-Woven / Pit-Loom -->
+        <div class="tech-detail-card" data-category="flatweave">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_hand_woven.jpg" alt="Hand-Woven Pit-Loom Weaving - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Reversible Flatweave</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Hand-Woven (Pit-Loom)</h3>
+            <p class="tech-card-desc">
+              Flatwoven interlocking warp and weft crafted on generational pit-looms by master Panipat weavers. Fully reversible, highly durable, easy to clean, and naturally textural for casual modern living.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Structure</span>
+                <span class="tech-spec-val">100% Reversible Flatweave</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">Combed Cotton, Pure Wool, Jute Blends</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Weight</span>
+                <span class="tech-spec-val">1400 - 2200 GSM</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Scandi Runners, Casual Living, Dining Rugs</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Matching Rugs &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Hand-Knotted -->
+        <div class="tech-detail-card" data-category="pile">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_hand_knotted.jpg" alt="Hand-Knotted Carpet Craftsmanship - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Heirloom Investment</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Hand-Knotted</h3>
+            <p class="tech-card-desc">
+              The pinnacle of rug craftsmanship. Each knot is hand-tied row by row over vertical loom warps. Produces unmatched longevity, exceptional knot density, and heirloom-grade investment carpets.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Knot Density</span>
+                <span class="tech-spec-val">30 to 120 Knots / Sq. Inch</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Knot Structure</span>
+                <span class="tech-spec-val">Tibetan &amp; Persian Asymmetric Knots</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">Hand-Spun NZ Wool, Silk &amp; Bamboo Blend</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Flagship Residential, Luxury Penthouses</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Matching Rugs &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Panja / Kilim -->
+        <div class="tech-detail-card" data-category="flatweave">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_panja_kilim.jpg" alt="Panja Kilim Tapestry Weaving - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Artisanal Tapestry</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Panja / Kilim</h3>
+            <p class="tech-card-desc">
+              Traditional heavy iron claw (panja) beats weft yarns tightly over cotton warp cords. Creates authentic geometric motifs, crisp line work, and dense, compact architectural tapestries.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Tooling</span>
+                <span class="tech-spec-val">Heavy Iron Panja (Claw) Tool</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">High-Twist Wool, Recycled Cotton Warp</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Finish</span>
+                <span class="tech-spec-val">Fringe Hemming, Tassel Knots</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Tribal Rugs, Wall Hangings, Floor Mats</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Matching Rugs &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Hand-Knitted -->
+        <div class="tech-detail-card" data-category="textile">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_hand_knitted.jpg" alt="Hand-Knitted Chunky Textiles - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Chunky Soft Textile</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Hand-Knitted</h3>
+            <p class="tech-card-desc">
+              Heavy-gauge artisan hand-knitting creating chunky cable-knit poufs, structural floor cushions, and tactile throws. Hand-finished with reinforced hidden zippers and durable inner lining.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Gauge</span>
+                <span class="tech-spec-val">Giant Cable &amp; Rib Knit</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Core Filling</span>
+                <span class="tech-spec-val">EPS Beads or Dense Foam Block Core</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">Cotton Cord, Merino Blend, Polyester Core</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Floor Poufs, Throws, Accent Soft Furnishings</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Soft Goods &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Braided -->
+        <div class="tech-detail-card" data-category="textile">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_braided.jpg" alt="Natural Fiber Braided Mats - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Coiled Natural Fiber</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Braided</h3>
+            <p class="tech-card-desc">
+              Continuous braided coils of natural golden jute, cotton cord, or recycled chindi fibres sewn together in concentric spirals. Creates organic circular and oval mats, planters, and storage caddies.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Construction</span>
+                <span class="tech-spec-val">Concentric Spiral Interlocking Braid</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">Tossa Jute, Bleached Cotton, Upcycled Yarn</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Reversibility</span>
+                <span class="tech-spec-val">100% Dual-Sided Usable Surface</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Round Rugs, Oval Runners, Storage Baskets</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Braided Items &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Hand-Hooked -->
+        <div class="tech-detail-card" data-category="pile">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_hand_hooked.jpg" alt="Hand-Hooked Loop Pile - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Dense Micro Loop</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Hand-Hooked</h3>
+            <p class="tech-card-desc">
+              Uncut loop pile technique pulling yarn loops through backing using an artisan hooked needle tool. Produces firm, dense, pebble-textured surface aesthetics that resist tracking and high foot traffic.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Pile Structure</span>
+                <span class="tech-spec-val">Continuous Tight Loop Pile</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Texture</span>
+                <span class="tech-spec-val">Pebble Grain, High Foot-Traffic Resilience</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">100% Wool, Cotton Canvas Base</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Kitchen Runners, Entryway Mats, Accent Rugs</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Hooked Rugs &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Machine-Tufted -->
+        <div class="tech-detail-card" data-category="precision">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_table_tufted.jpg" alt="Machine-Tufted High-Volume Production - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Volume Precision</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Machine-Tufted</h3>
+            <p class="tech-card-desc">
+              High-speed precision multi-needle tufting for consistent bathmat runs and commercial residential floor coverings at high container volume. Backed with non-skid natural latex compounds.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Speed &amp; Volume</span>
+                <span class="tech-spec-val">Mass Container Output (Up to 15 FCL/mo)</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Anti-Skid Backing</span>
+                <span class="tech-spec-val">Natural Latex Spray, Hotmelt, TPE</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Fiber Pairing</span>
+                <span class="tech-spec-val">Combed Cotton, Soft Microfibre, Chenille</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Luxury Bathrugs, Hotel Bathroom Sets</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Bathrugs &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Printed -->
+        <div class="tech-detail-card" data-category="precision">
+          <div class="tech-card-image-wrap">
+            <img src="assets/images/crafts/craft_printed.jpg" alt="Precision Screen &amp; Digital Printing - Real Carpets India" class="tech-card-img" loading="lazy">
+            <span class="tech-card-badge">Screen &amp; Digital</span>
+          </div>
+          <div class="tech-card-content">
+            <h3 class="tech-card-title">Printed &amp; Screened</h3>
+            <p class="tech-card-desc">
+              High-definition flatbed screen and digital pigment printing on woven canvas or cotton velour bases. Enables photographic precision, intricate repeat patterns, and custom licensed retail artwork.
+            </p>
+            <div class="tech-specs-box">
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Printing Method</span>
+                <span class="tech-spec-val">Rotary Screen &amp; High-Res Digital Pigment</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Colour Fastness</span>
+                <span class="tech-spec-val">Grade 4+ Washing &amp; Light Fastness</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Base Fabric</span>
+                <span class="tech-spec-val">Heavy Cotton Velour, Loop Terry, Jute Base</span>
+              </div>
+              <div class="tech-spec-row">
+                <span class="tech-spec-label">Best Applications</span>
+                <span class="tech-spec-val">Kids Rugs, Fiesta Decor, Statement Pillows</span>
+              </div>
+            </div>
+            <div class="tech-card-actions">
+              <a href="products.html" class="btn btn-outline btn-sm">View Printed Decor &rarr;</a>
+              <button class="btn btn-terracotta btn-sm" data-action="open-quote">Enquire</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Techniques Comparison Matrix Table
+       ========================================================================== -->
+  <section class="section section-subtle">
+    <div class="container">
+      <div style="max-width: 720px; margin-bottom: 2rem;" class="reveal-on-scroll">
+        <span class="eyebrow">Technical Specification Guide</span>
+        <h2 class="section-title">Construction Comparison Matrix</h2>
+        <p class="section-desc">
+          Compare pile structures, typical knot/stitch densities, reversibility, and minimum export run recommendations across our 9 manufacturing techniques.
+        </p>
+      </div>
+
+      <div class="techniques-matrix-table-wrap reveal-on-scroll">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Technique</th>
+              <th>Surface Construction</th>
+              <th>Reversible</th>
+              <th>Typical Pile / Weight</th>
+              <th>Recommended Fibers</th>
+              <th>Lead Time (FCL)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hand-Tufted</strong></td>
+              <td>Cut Pile / Loop Relief</td>
+              <td>No (Latexed Canvas Backing)</td>
+              <td>10 – 25 mm Pile</td>
+              <td>New Zealand Wool, Viscose</td>
+              <td>45 – 60 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Hand-Woven Pit-Loom</strong></td>
+              <td>Interlocking Flatweave</td>
+              <td>Yes (100% Dual-Sided)</td>
+              <td>1400 – 2200 GSM</td>
+              <td>Combed Cotton, Wool, Jute</td>
+              <td>35 – 45 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Hand-Knotted</strong></td>
+              <td>Hand-Tied Knots</td>
+              <td>No (Authentic Knot Back)</td>
+              <td>30 – 120 Knots/sq.in</td>
+              <td>Hand-Spun Wool, Mulberry Silk</td>
+              <td>60 – 90 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Panja / Kilim</strong></td>
+              <td>Claw-Beaten Tapestry</td>
+              <td>Yes (100% Dual-Sided)</td>
+              <td>1200 – 1800 GSM</td>
+              <td>High-Twist Wool, Cotton Warp</td>
+              <td>40 – 50 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Hand-Knitted</strong></td>
+              <td>Chunky Cable Knit</td>
+              <td>Yes (Textured Textile)</td>
+              <td>Heavygauge Tube Yarn</td>
+              <td>Cotton Cord, Merino Blend</td>
+              <td>30 – 40 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Braided</strong></td>
+              <td>Concentric Spiral Coils</td>
+              <td>Yes (Dual-Sided)</td>
+              <td>1800 – 2600 GSM</td>
+              <td>Natural Jute, Recycled Chindi</td>
+              <td>30 – 40 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Hand-Hooked</strong></td>
+              <td>Dense Micro-Loop Pile</td>
+              <td>No (Canvas Backing)</td>
+              <td>8 – 12 mm Loop Pile</td>
+              <td>100% Pure Wool, Cotton</td>
+              <td>45 – 55 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Machine-Tufted</strong></td>
+              <td>Precision Multi-Needle</td>
+              <td>No (Anti-Skid Spray)</td>
+              <td>1200 – 2400 GSM</td>
+              <td>Combed Cotton, Microfibre</td>
+              <td>25 – 35 Days</td>
+            </tr>
+            <tr>
+              <td><strong>Printed &amp; Screened</strong></td>
+              <td>High-Definition Pigment</td>
+              <td>No (One-Sided Print)</td>
+              <td>Direct On Canvas / Velour</td>
+              <td>Cotton Velour, Woven Canvas</td>
+              <td>30 – 40 Days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Custom Sampling CTA Banner
+       ========================================================================== -->
+  <section class="section section-dark" style="text-align: center; position: relative;">
+    <div class="container container-narrow reveal-on-scroll">
+      <span class="eyebrow">Hybrid Weaves &amp; Custom R&amp;D</span>
+      <h2 class="section-title" style="color: #FFFFFF; font-size: clamp(2.25rem, 3.8vw, 3.5rem);">
+        Need a Bespoke Technique or Custom Yarn Blend?
+      </h2>
+      <p class="section-desc" style="color: rgba(250, 248, 245, 0.75); margin: 0 auto 2.5rem; font-size: 1.1rem;">
+        Send your CAD drawings, target FOB prices, and texture references. Our Panipat sampling workshop produces custom weave swatches and lab dips within 5 to 7 working days.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-terracotta" data-action="open-quote" style="padding: 1rem 2.25rem;">
+          Request Custom Technique Sample
+        </button>
+        <a href="custom-programme.html" class="btn btn-outline-white" style="padding: 1rem 2.25rem;">
+          Explore Custom Rug Programme &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo footer-logo" aria-label="Real Carpets India Home">
+            <img src="assets/images/brand-logo-white.png" alt="Real Carpets India" class="brand-logo-img footer-logo-img">
+          </a>
+          <p>
+            Rugs &amp; carpets manufacturing house established in 1995. Supplying international retailers, brands, and hospitality projects worldwide with premium floor-covering solutions.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge badge-dark" style="border-color: #444;">ISO 9001:2015</span>
+            <span class="badge badge-dark" style="border-color: #444;">Sedex SMETA 6.1</span>
+            <span class="badge badge-dark" style="border-color: #444;">OEKO-TEX</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Company</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="techniques.html" class="footer-link">Techniques</a></li>
+            <li><a href="custom-programme.html" class="footer-link">Custom Rug Programme</a></li>
+            <li><a href="quality.html" class="footer-link">Quality</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Facility Highlights</h4>
+          <ul class="footer-links">
+            <li><a href="about.html#process-timeline" class="footer-link">17-Stage Integrated Process</a></li>
+            <li><a href="about.html#infrastructure" class="footer-link">Panipat Industrial Unit</a></li>
+            <li><a href="techniques.html" class="footer-link">Pit-Looms &amp; Panja Gantries</a></li>
+            <li><a href="techniques.html" class="footer-link">Hand-Tufted &amp; Hand-Knotted</a></li>
+            <li><a href="quality.html" class="footer-link">AQL Inspection Systems</a></li>
+            <li><a href="quality.html" class="footer-link">Social Labour Compliance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Factory Coordinates</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Plot No. 891, Sector-08, HUDA, Panipat 132103, Haryana, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <div>
+              <a href="mailto:sunil@realcarpetsindia.com" class="footer-link" style="display: block;">sunil@realcarpetsindia.com</a>
+              <a href="mailto:realcarpetsindia@gmail.com" class="footer-link" style="display: block;">realcarpetsindia@gmail.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+919729684321" class="footer-link">+91-97296-84321</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Real Carpets India. All Rights Reserved. A Govt. Recognized Export House.</p>
+        <div class="footer-bottom-links">
+          <span>Panipat, Haryana, India</span>
+          <span>ISO 9001:2015</span>
+          <span>Sedex SMETA 4-Pillar</span>
+          <span>AQL 2.5 Inspection Standard</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sample Swatch Drawer -->
+  <div class="sample-drawer-overlay" id="sample-drawer-overlay"></div>
+  <aside class="sample-drawer" id="sample-drawer" aria-label="Sample Swatch Selection Drawer">
+    <div class="sample-drawer-header">
+      <div>
+        <h3 class="sample-drawer-title">Curated Swatch Box</h3>
+        <span class="sample-drawer-subtitle">Complimentary for trade procurement &amp; design houses</span>
+      </div>
+      <button class="close-drawer-btn" id="close-sample-drawer" aria-label="Close Sample Box">&times;</button>
+    </div>
+    <div class="sample-drawer-body" id="sample-drawer-items">
+      <!-- Injected by samples.js -->
+    </div>
+    <div class="sample-drawer-footer">
+      <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.75rem;">
+        Dispatched via DHL Express within 48 business hours with complete yarn count and backing specifications.
+      </div>
+      <button class="btn btn-terracotta" id="btn-request-samples" style="width: 100%;">
+        Request Swatch Box Courier &rarr;
+      </button>
+    </div>
+  </aside>
+
+  <!-- Quote Request Modal -->
+  <div class="modal-backdrop" id="quote-request-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="quote-modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Direct Export Enquiry</span>
+          <h3 class="modal-title">Request B2B Quotation</h3>
+        </div>
+        <button class="modal-close-btn" id="close-quote-modal" aria-label="Close quotation modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="quote-request-form" novalidate>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" name="name" class="form-input" placeholder="e.g. Johnathan Miller" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company / Brand Name *</label>
+              <input type="text" name="company" class="form-input" placeholder="e.g. Nordic Rugs AS" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Work Email *</label>
+              <input type="email" name="email" class="form-input" placeholder="buyer@company.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Phone / WhatsApp</label>
+              <input type="tel" name="phone" class="form-input" placeholder="+44 20 7946 0912">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label class="form-label">Product Categories</label>
+              <input type="text" name="productInterest" class="form-input" placeholder="e.g. Hand-Tufted, Kilims">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target Market</label>
+              <input type="text" name="targetMarket" class="form-input" placeholder="e.g. Retail / Hospitality">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Destination Port</label>
+              <input type="text" name="deliveryCountry" class="form-input" placeholder="e.g. Felixstowe / Hamburg">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Project Requirements &amp; Notes</label>
+            <textarea name="message" id="quote-requirement" class="form-textarea" placeholder="Specify required dimensions, volume, target FOB price, packaging needs..."></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+            <button type="button" class="btn btn-outline" id="btn-cancel-quote">Cancel</button>
+            <button type="submit" class="btn btn-terracotta">Send Quotation Request &rarr;</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- General Enquiry / Order Success Modal -->
+  <div class="modal-backdrop" id="enquiry-success-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="product-detail-modal-box" style="max-width: 540px; text-align: center;">
+      <button class="modal-close-btn" id="close-success-modal" aria-label="Close confirmation">&times;</button>
+      <div style="padding: 3rem 2rem;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(164, 89, 56, 0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--accent-terracotta);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 id="success-modal-title" style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 0.75rem;">Request Registered</h3>
+        <p id="success-modal-message" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+          Thank you for contacting Real Carpets India. Our Panipat export merchandising desk will examine your specifications and provide a proforma pricing and lead-time schedule.
+        </p>
+        <div style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem 1.25rem; display: inline-block; margin-bottom: 2rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); display: block;">Reference ID</span>
+          <strong id="success-ref-id" style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent-terracotta);">RCI-REQ-2026</strong>
+        </div>
+        <div>
+          <button class="btn btn-primary" id="success-dismiss-btn" style="min-width: 180px;">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- App Script Entrypoint -->
+  <script type="module" src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tech Filter Functionality
+      const filterBtns = document.querySelectorAll('.tech-filter-btn');
+      const cards = document.querySelectorAll('.tech-detail-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          cards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      const cancelQuoteBtn = document.getElementById('btn-cancel-quote');
+      if (cancelQuoteBtn) {
+        cancelQuoteBtn.addEventListener('click', () => {
+          const quoteModal = document.getElementById('quote-request-modal');
+          if (quoteModal) quoteModal.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
